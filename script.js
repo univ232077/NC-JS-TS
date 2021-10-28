@@ -66,15 +66,15 @@ if (products_menu && card_template) {
 const basket_open_button = document.querySelector("#basket-open-button");
 if (basket_open_button) {
     basket_open_button.addEventListener("click", () => {
-        const popup = document.querySelector("#popup-template");
-        if (popup){
-            popup_content = popup.content.cloneNode(true);
+        const popup_template = document.querySelector("#popup-template");
+        if (popup_template){
+            const popup_content = popup_template.content.cloneNode(true);
             const basket = popup_content.querySelector("#basket-template").content.cloneNode(true);
             popup_content.querySelector(".popup-background").appendChild(basket);
             
             popup_content.querySelector(".basket-close-button").addEventListener("click", () => document.querySelector(".popup-background").remove());
 
-            popup.parentElement.insertBefore(popup_content, popup.parentElement.firstChild);
+            popup_template.parentElement.insertBefore(popup_content, popup_template.parentElement.firstChild);
             const basket_list = document.querySelector(".basket-list");
             const basket_template = document.querySelector("#basket-item-template");
 
@@ -87,12 +87,11 @@ if (basket_open_button) {
                     basket_list.appendChild(newBasketItem);
                 })
             } else {
-                throw("Unable to find basket list or template!");
+                throw new Error("Unable to find basket list or template!");
             }
         }
     });
 } else {
     throw new Error("Basket popup button is missing")
 }
-
 
