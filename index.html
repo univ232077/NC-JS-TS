@@ -1,63 +1,61 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <meta charset="UTF-8" />
+<html lang="ru">
+<head>
+    <title>Интернет магазин компьютерных деталей</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <meta charset="UTF-8"/>
     <script defer src="script.js"></script>
-  </head>
+</head>
 
-  <body>
-
-    <template id="popup-template">
-      <div class="popup-background">
+<body>
+<template id="popup-template">
+    <div class="popup-background">
         <template id="basket-template">
-          <div class="basket-container">
-            <div class="basket-header">
-              <h2>Корзина</h2>
-              <button class="basket-close-button">X</button>
-            </div>
-            <div class="basket-list">
-              <template id="basket-item-template">
-                <div class="basket-item">
-                  <span class="basket-item-name"></span>
-                  <span class="basket-item-count"></span>
-                  <span class="basket-item-price"></span>
+            <div class="basket-container">
+                <div class="basket-header">
+                    <h2>Корзина</h2>
+                    <button class="basket-close-button">X</button>
                 </div>
-              </template>
+                <div class="basket-list">
+                    <template id="basket-item-template">
+                        <div class="basket-item">
+                            <span class="basket-item-name"></span>
+                            <span class="basket-item-count"></span>
+                            <span class="basket-item-price"></span>
+                        </div>
+                    </template>
+                </div>
+                <div class="basket-footer">
+                    <button class="basket-button">Перейти к оплате</button>
+                </div>
             </div>
-              <div class="basket-footer">
-              <button class="basket-button">Перейти к оплате</button>
-            </div>
-          </div>
         </template>
-      </div>
-    </template>
-
-    <header class="header">
-      <h1>Магазин компьютерных комплектующих</h1>
-    </header>
-
-    <div class="navmenu">
-      <h2>Меню навигации</h2>
-      <button id="basket-open-button">Открыть корзину</button>
     </div>
-    <h2 class="products-header">Доступные товары:</h2>
-    <div class="products-menu">
-      <template id="product-card-template">
+</template>
+
+<header class="header">
+    <h1>Магазин компьютерных комплектующих</h1>
+</header>
+
+<div class="navigation-menu">
+    <h2>Меню навигации</h2>
+    <button id="basket-open-button">Открыть корзину</button>
+</div>
+<h2 class="products-header">Доступные товары:</h2>
+<div class="products-menu">
+    <template id="product-card-template">
         <div class="product-card">
-          <img class="product-card-image" src="" alt="img">
-          <h3 class="product-card-name"></h3>
-          <p class="product-card-price"></p>
-          <button class="product-card-button"></button>
+            <img class="product-card-image" src="" alt="img">
+            <h3 class="product-card-name"></h3>
+            <p class="product-card-price"></p>
+            <button class="product-card-button"></button>
         </div>
-      </template>
-    </div>
+    </template>
+</div>
 
-    <footer class="footer">
-      <a href="">О нас</a>
-      <a href="">Связаться с нами</a>
-    </footer>
-
-
-  </body>
+<footer class="footer">
+    <a href="">О нас</a>
+    <a href="">Связаться с нами</a>
+</footer>
+</body>
 </html>
