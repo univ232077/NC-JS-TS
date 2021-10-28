@@ -13,7 +13,8 @@
 
 .products-menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
 }
@@ -22,23 +23,42 @@
   text-align: center;
 }
 
-.product {
+.product-card {
   outline: 1px solid black;
   padding: 15px;
   gap: 10px;
-  max-width: 250px;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.product button {
+.product-card-button {
   height: 30px;
-  width: 100px;
+  margin: auto;
+  border-radius: 8px;
+  border-color: brown;
+  background-color: slateblue;
+  color: white;
 }
 
-.product img {
-  display: block;
+.product-card-button:active {
+  background-color: rgb(128, 121, 170);
+}
+
+.product-card-name {
+  color: blue;
+}
+
+.product-card-price {
+  margin: auto;
+}
+
+.product-card-image {
   width: 200px;
   height: 200px;
-  border: 1px solid black;
+  border: 1px solid gray;
 }
 
 .footer {
@@ -50,38 +70,47 @@
   justify-content: center;
 }
 
-.popup {
+.popup-background {
   background-color: rgba(0,0,0,0.7);
   width: 100%;
   height: 100%;
   position: fixed;
-  overflow: hidden;
+  display: flex;
   top: 0px;
   left: 0px;
   bottom: 0px;
   right: 0px;
+  /* visibility: hidden; */
 }
 
 .basket-container {
   background-color: white;
-  height: 350px;
-  width: 500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
+  width: 800px;
+  max-height: auto;
+  margin: auto;
+  border-radius: 12px;
 }
 
 .basket-header {
+  background-color: aquamarine;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  min-height: 40px;
+}
+
+.basket-header h2 {
+  margin: auto;
 }
 
 .basket-list {
   margin: 5px 10px 10px 5px;
   overflow-x: hidden;
-  overflow-y: scroll;
-  height: 80%;
+  
+  max-height: 300px;
 }
 
 .basket-list::before {
@@ -99,19 +128,44 @@
   justify-content: space-between;
   margin-left: 3%;
   margin-right: 3%;
+  padding: 10px;
+  border-top: 1px solid grey;
+}
+
+.basket-item:hover {
+  background-color: gainsboro;
+}
+
+.basket-item-name {
+  color: black;
+  max-width: 100px;
+}
+
+.basket-item-count {
+  color: black;
+}
+
+.basket-item-price {
+  color: black;
 }
 
 .basket-footer {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+}
+
+.basket-close-button {
+  height: auto;
+  width: 50px;
 }
 
 .basket-button {
-  height: 30px;
-  width: 50%;
+  width: 25%;
+  margin-bottom: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: snow;
-  border: 1px solid black;
+  border-radius: 8px;
+  border-color: black;
 }
 
 .basket-button:active {

@@ -3,111 +3,35 @@
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="UTF-8" />
+    <script defer src="script.js"></script>
   </head>
 
   <body>
 
-    <div class="popup">
-      <div class="basket-container">
-        <div class="basket-header">
-          <h2>Корзина товаров</h1>
-        </div>
-        
-        <div class="basket-list">
-  
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
+    <template id="popup-template">
+      <div class="popup-background">
+        <template id="basket-template">
+          <div class="basket-container">
+            <div class="basket-header">
+              <h2>Корзина</h2>
+              <button class="basket-close-button">X</button>
+            </div>
+            <div class="basket-list">
+              <template id="basket-item-template">
+                <div class="basket-item">
+                  <span class="basket-item-name"></span>
+                  <span class="basket-item-count"></span>
+                  <span class="basket-item-price"></span>
+                </div>
+              </template>
+            </div>
+              <div class="basket-footer">
+              <button class="basket-button">Перейти к оплате</button>
+            </div>
           </div>
-  
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          <div class="basket-item">
-            <span>Товар</span>
-            <span>5</span>
-            <span>2000р</span>
-          </div>
-          
-  
-  
-          
-        </div>
-  
-        <div class="basket-footer">
-          <button class="basket-button">Удалить все товары из корзины</button>
-          <button class="basket-button">Перейти к оплате</button>
-        </div>
+        </template>
       </div>
-    </div>
+    </template>
 
     <header class="header">
       <h1>Магазин компьютерных комплектующих</h1>
@@ -115,40 +39,25 @@
 
     <div class="navmenu">
       <h2>Меню навигации</h2>
+      <button id="basket-open-button">Открыть корзину</button>
     </div>
     <h2 class="products-header">Доступные товары:</h2>
     <div class="products-menu">
-      <div class="product">
-        <img
-          src="https://img.mvideo.ru/Pdb/30032538b.jpg"
-        />
-        <h3>Оперативная память</h3>
-        <p>2000р</p>
-        <button>Купить</button>
-      </div>
-      <div class="product">
-        <img
-          src="https://musmag.com/images/stories/virtuemart/product/fr1.png"
-        />
-        <h3>Компьютерный корпус</h3>
-        <p>1500р</p>
-        <button>Купить</button>
-      </div>
-      <div class="product">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/2/22/3-Tasten-Maus_Microsoft.jpg"
-        />
-        <h3>Компьютерная мышь</h3>
-        <p>300р</p>
-        <button>Купить</button>
-      </div>
+      <template id="product-card-template">
+        <div class="product-card">
+          <img class="product-card-image" src="" alt="img">
+          <h3 class="product-card-name"></h3>
+          <p class="product-card-price"></p>
+          <button class="product-card-button"></button>
+        </div>
+      </template>
     </div>
 
     <footer class="footer">
-      <a href="" alt="ссылка">О нас</a>
-      <a href="" alt="ссылка">Связаться с нами</a>
+      <a href="">О нас</a>
+      <a href="">Связаться с нами</a>
     </footer>
+
+
   </body>
-
-
 </html>
