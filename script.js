@@ -1,6 +1,5 @@
 "use strict";
 
-// Product is an abstract class, it needs to be inherited.
 class Product {
     constructor(name, price) {
         if (this.constructor === Product) {
@@ -26,7 +25,7 @@ class BasketProduct extends Product {
     }
 }
 
-const cards = [
+const productCards = [
     new CardProduct(
         "Оперативная память 2 ГБ",
         1000,
@@ -37,23 +36,28 @@ const cards = [
         2500,
         "https://img.mvideo.ru/Pdb/30032538b.jpg"
     ),
-    new CardProduct("Оперативная память 8 ГБ",
+    new CardProduct(
+        "Оперативная память 8 ГБ",
         5000,
         "https://img.mvideo.ru/Pdb/30032538b.jpg"
     ),
-    new CardProduct("Оперативная память 16 ГБ",
+    new CardProduct(
+        "Оперативная память 16 ГБ",
         9000,
         "https://img.mvideo.ru/Pdb/30032538b.jpg"
     ),
-    new CardProduct("Оперативная память 32 ГБ",
+    new CardProduct(
+        "Оперативная память 32 ГБ",
         16000,
         "https://img.mvideo.ru/Pdb/30032538b.jpg"
     ),
-    new CardProduct("Компьютерный корпус",
+    new CardProduct(
+        "Компьютерный корпус",
         4500,
         "https://musmag.com/images/stories/virtuemart/product/fr1.png"
     ),
-    new CardProduct("Компьютерная мышь Bloody R30",
+    new CardProduct(
+        "Компьютерная мышь Bloody R30",
         1300,
         "http://img.bloody.com/en/uploadfile/image/20161012/20161012065850_85014.jpg"
     ),
@@ -70,7 +74,7 @@ const basket_items = [];
 const products_menu = document.querySelector(".products-menu");
 const card_template = document.querySelector("#product-card-template");
 if (products_menu && card_template) {
-    cards.forEach((card, index) => {
+    productCards.forEach((card, index) => {
         const newCard = card_template.content.cloneNode(true);
         newCard.querySelector(".product-card").id = `card_${index}`;
         newCard.querySelector(".product-card-image").src = card.image_url;
