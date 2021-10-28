@@ -32,6 +32,7 @@ const cards = [
     new ProductCard("Компьютерная мышь", 300, "https://upload.wikimedia.org/wikipedia/commons/2/22/3-Tasten-Maus_Microsoft.jpg"),
 ];
 
+// Basket items buffer
 const basket_items = [];
 
 
@@ -59,14 +60,12 @@ if (products_menu && card_template) {
         products_menu.appendChild(newCard);
     });
 } else {
-    throw("product cards exception");
+    throw new Error("Product cards exception");
 }
 
 const basket_open_button = document.querySelector("#basket-open-button");
 if (basket_open_button) {
     basket_open_button.addEventListener("click", () => {
-        console.log("open popup");
-        
         const popup = document.querySelector("#popup-template");
         if (popup){
             popup_content = popup.content.cloneNode(true);
@@ -79,9 +78,6 @@ if (basket_open_button) {
             const basket_list = document.querySelector(".basket-list");
             const basket_template = document.querySelector("#basket-item-template");
 
-            console.log(basket_list);
-            console.log(basket_template);
-
             if (basket_list && basket_template) {
                 basket_items.forEach((item) => {
                     const newBasketItem = basket_template.content.cloneNode(true);
@@ -91,12 +87,12 @@ if (basket_open_button) {
                     basket_list.appendChild(newBasketItem);
                 })
             } else {
-                throw("ERROR: Unable to find basket list or template!");
+                throw("Unable to find basket list or template!");
             }
         }
     });
 } else {
-    throw("EXCEPTION: basket popup button is missing");
+    throw new Error("Basket popup button is missing")
 }
 
 
