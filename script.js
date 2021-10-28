@@ -32,7 +32,7 @@ const cards = [
     new ProductCard("Компьютерная мышь", 300, "https://upload.wikimedia.org/wikipedia/commons/2/22/3-Tasten-Maus_Microsoft.jpg"),
 ];
 
-let basket_items = [];
+const basket_items = [];
 
 
 const products_menu = document.querySelector(".products-menu");
